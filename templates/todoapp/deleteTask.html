@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="main-container">
+        <form method="POST" action="">
+            {% csrf_token %}
+
+            <p>Are you sure you want to delete{{ item }}?</p>
+            <a class="btn btn-primary" href="{% url 'list_items' %}">&laquo Back to Task Lists</a>
+            <input class="btn btn-danger" type="submit" value="confirm">
+        </form>
+    </div>
+{% endblock %}

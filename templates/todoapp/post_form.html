@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <a class="btn btn-primary" href="{% url 'list_items' %}">&laquo Back to Task Lists</a>
+    <div class="main-container">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-primary" type="submit" value="save">
+        </form>
+    </div>
+{% endblock %}
